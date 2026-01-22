@@ -1,42 +1,53 @@
+/* src/App.css */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 防止捲動 */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content-area {
+  flex: 1; /* 佔滿剩餘空間 */
+  overflow: hidden;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.bottom-nav {
+  height: 70px;
+  background-color: #1a1a1a;
+  display: flex;
+  border-top: 1px solid #333;
+  padding-bottom: env(safe-area-inset-bottom); /* 避開 iPhone 底部橫條 */
 }
 
-.card {
-  padding: 2em;
+.nav-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 12px;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.read-the-docs {
-  color: #888;
+.nav-btn.active {
+  color: #4da3ff; /* 啟動時變成藍色 */
+}
+
+.nav-btn:active {
+  background-color: #222;
 }
